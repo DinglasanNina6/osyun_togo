@@ -16,7 +16,7 @@ def main():
     st.sidebar.markdown('Are your mushrooms edible or poisonous?')
 
     @st.cache_data(persist=True)
-    def Load_data():
+    def load_data():
         data = pd.read_csv("mushrooms.csv")
         label = LabelEncoder()
         for col in data.columns:
