@@ -114,7 +114,7 @@ def main():
     if st.sidebar.checkbox("Show raw data", False):
         st.subheader("Mushroom Data Set (Classification)")
         st.write(df)
-        st.sidebar.markdown('By Niña Dinglasan')
+    st.sidebar.markdown('By Niña Dinglasan')
 
 
 
