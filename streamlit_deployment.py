@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 def main():
     st.title('Binary Classification Web App')
     st.sidebar.title('Binary Classification Web App')
-    st.markdown('Are your mushrooms edible or poisonous?')
+    st.markdown('Are your mushrooms edible or poisonous? ☆.𓋼𓍊 𓆏 𓍊𓋼𓍊.☆')
     st.sidebar.markdown('Are your mushrooms edible or poisonous?')
 
     @st.cache_data(persist=True)
@@ -114,6 +114,7 @@ def main():
     if st.sidebar.checkbox("Show raw data", False):
         st.subheader("Mushroom Data Set (Classification)")
         st.write(df)
+        st.sidebar.markdown('By Niña Dinglasan')
 
 
 
