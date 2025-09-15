@@ -16,21 +16,19 @@ def main():
     st.sidebar.markdown('Are your mushrooms edible or poisonous?')
 
     @st.cache_data(persist=True)
-    def load_data():
-        df = pd.read_csv('mushrooms.csv')  # Kaggle file in your repo
-        df = df.replace('?', df.mode().iloc[0])  # Replace missing values
-        # Encode categorical columns
+    def Load_data():
+        data = pd.read_csv("mushrooms.csv")
         label = LabelEncoder()
-        for col in df.columns:
-            df[col] = label.fit_transform(df[col])
-        return df
+        for col in data.columns:
+            data[col] = label.fit_transform(data[col])
+        return data
 
     @st.cache_data(persist=True)
     def split(df):
-        y = df['class']  # target column
-        X = df.drop(columns=['class'])
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=8)
-        return X_train, X_test, y_train, y_test
+        y = df.type
+        x = df.drop(columns=["type"])
+        x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=0)
+        return x_train, x_test, y_train, y_test
 
     def plot_metrics(metrics_list, model, X_test, y_test, class_names):
         if 'Confusion Matrix' in metrics_list:
